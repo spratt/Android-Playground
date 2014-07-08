@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ButtonActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run"
+        android:id="@+id/runButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:onClick="runClick"
+        android:layout_toLeftOf="@+id/clearButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/outputText"
+        android:layout_below="@+id/runButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:textIsSelectable="true"
+        android:selectAllOnFocus="true"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:enabled="true"
+        android:layout_alignEnd="@+id/clearButton"
+        android:clickable="false"
+        android:autoText="false"
+        android:singleLine="false"
+        android:gravity="top" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/clearButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="clearClick" />
+</RelativeLayout>
