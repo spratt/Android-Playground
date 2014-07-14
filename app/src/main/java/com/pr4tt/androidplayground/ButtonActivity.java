@@ -1,6 +1,7 @@
 package com.pr4tt.androidplayground;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +15,8 @@ public class ButtonActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
+        Intent intent = getIntent();
+        logLine(intent.getAction());
     }
 
 
@@ -30,10 +33,7 @@ public class ButtonActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
     protected void logLine(String s) {
@@ -47,7 +47,7 @@ public class ButtonActivity extends Activity {
     }
 
     public void runClick(View view) {
-        logLine("Hello");
+        logLine(view.toString());
     }
 
     public void clearClick(View view) {
